@@ -18,23 +18,69 @@
   <property name="name" value="suhail"/>
   <property name="gender" value="Male"/>
   <property name="address" ref="add1"/>
+  <property name="list">
+  <list>
+  <value>Hello</value>
+  <value>234</value>
+  <value>342</value>
+  <value>90</value>
+  <value>234</value>
+  <value>null</value>
+  </list>
+  </property>
+  <property name="set">
+  <set>
+  <value>983</value>
+  <value>98</value>
+  <value>93</value>
+  <value>9</value>
+  <value>3</value>
+  <value>5</value>
+  <value>983</value>
+  <value>983</value>
+  </set>
+  </property>
+  
+  <property name="map">
+  <map>
+  <entry key="1" value="ONE"></entry>
+  <entry key="2" value="TWO"></entry>
+  <entry key="3" value="THREE"></entry>
+  <entry key="4" value="FOUR"></entry>
+  <entry key="2" value="Two"></entry>
+  </map>
+  </property>
     </bean>
 
 
-
-
-
-
-<bean name="add2" class="learning.spring.entity.Address">
-<constructor-arg name="city" value="Pune"/>
-<constructor-arg name="state" value="Maharashtra"/>
-</bean>
-
-
 <bean name="emp2" class="learning.spring.entity.Employee">
-<constructor-arg name="id" value="201"/>
-<constructor-arg name="name" value="Shadab"/>
+
+<constructor-arg name="id" value="1001"/>
+<constructor-arg name="name" value="Sobi"/>
 <constructor-arg name="gender" value="Male"/>
-<constructor-arg name="address" ref="add2"/>
+<constructor-arg name="address" ref="add1"/>
+<constructor-arg>
+<list>
+<value>90</value>
+<value>80</value>
+<value>70</value>
+</list>
+</constructor-arg>
+
+<constructor-arg>
+<set>
+<value>10</value>
+<value>20</value>
+<value>30</value>
+</set>
+</constructor-arg>
+
+<constructor-arg>
+<map>
+<entry key="50" value="Fifty"></entry>
+<entry key="60" value="Sixty"></entry>
+<entry key="70" value="Seventy"></entry>
+</map>
+</constructor-arg>
 </bean>
 </beans>

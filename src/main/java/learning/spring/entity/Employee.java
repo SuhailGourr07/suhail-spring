@@ -1,25 +1,75 @@
 package learning.spring.entity;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 public class Employee {
 
+	// Primitive and String based dependency
 	private int id;
 	private String name;
 	private String gender;
 	
+	// Dependent Object based dependency
 	private Address address;
+	
+	// Collection Dependency
+	private List<String> list;
+	
+	private Set<Integer> set;
+	
+	private Map<Integer, String> map;
+	
+	
 	
 	public Employee() {
 		System.out.println("Emp NoArgs Constructor");
 	}
 	
-	public Employee(int id, String name, String gender,Address address) {
+	
+	public Employee(int id, String name, String gender, Address address, List<String> list, Set<Integer> set,
+			Map<Integer, String> map) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.gender = gender;
 		this.address = address;
-		System.out.println("Emp Args Constructor");
+		this.list = list;
+		this.set = set;
+		this.map = map;
 	}
-	
+
+	public List<String> getList() {
+		return list;
+	}
+
+
+	public void setList(List<String> list) {
+		this.list = list;
+	}
+
+
+	public Set<Integer> getSet() {
+		return set;
+	}
+
+
+	public void setSet(Set<Integer> set) {
+		this.set = set;
+	}
+
+
+	public Map<Integer, String> getMap() {
+		return map;
+	}
+
+
+	public void setMap(Map<Integer, String> map) {
+		this.map = map;
+	}
+
+
 	public Address getAddress() {
 		return address;
 	}
@@ -55,9 +105,11 @@ public class Employee {
 		System.out.println("Emp gender setter");
 	}
 
+
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", address=" + address + "]";
+		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", address=" + address + ", list="
+				+ list + ", set=" + set + ", map=" + map + "]";
 	}
 	
 }

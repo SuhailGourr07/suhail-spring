@@ -13,17 +13,14 @@ public class Main {
 		ApplicationContext ioc = new ClassPathXmlApplicationContext("application-context.xml");
 		
 		Employee employee1 = ioc.getBean("emp1", Employee.class);
-		Address address1 = ioc.getBean("add1", Address.class);
+//		Address address1 = ioc.getBean("add1", Address.class);
 		
 		System.out.println(employee1);
-		System.out.println(address1);
+//		System.out.println(address1);
 		
-		
-		Employee employee2 = ioc.getBean("emp2", Employee.class);
-		System.out.println(employee2);
-		
-		Address address2 = ioc.getBean("add2", Address.class);
-		System.out.println(address2);
-	}
 
+		Employee emp2 = ioc.getBean("emp2", Employee.class);
+		System.out.println(emp2);
+		
+	}
 }
