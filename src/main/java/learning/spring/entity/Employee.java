@@ -5,18 +5,17 @@ public class Employee {
 	private int id;
 	private String name;
 	private String gender;
-	
+
 	public Employee() {
 		System.out.println("NoArgs Constructor");
 	}
-	
+
 	public Employee(int id, String name, String gender) {
 		this.id = id;
 		this.name = name;
 		this.gender = gender;
 		System.out.println("Args Constructor");
 	}
-	
 
 	public int getId() {
 		return id;
@@ -44,10 +43,4 @@ public class Employee {
 		this.gender = gender;
 		System.out.println("gender setter");
 	}
-
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + "]";
-	}
-	
 }
