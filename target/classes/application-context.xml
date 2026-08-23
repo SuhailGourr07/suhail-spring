@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- bean definitions here -->
-    
+	<!-- bean definitions here -->
+
+	<bean name="address" class="learning.spring.entity.Address">
+		<property name="city" value="Noida" />
+		<property name="state" value="UP" />
+	</bean>
 
 
-    <bean name="emp1" class="learning.spring.entity.Employee">
+	<!--  <bean name="emp1" class="learning.spring.entity.Employee"
+	autowire="byName">
    <property name="id" value="101"/>
   <property name="name" value="suhail"/>
   <property name="gender" value="Male"/>
-  <property name="address">
-  
-  <bean class="learning.spring.entity.Address">
-  <property name="city" value="Kanpur"/>
-  <property name="state" value="UP"/>
-  </bean>
-  
-  </property>
-    </bean>
+    </bean>-->
+    
+
+	<!--<bean name="emp1" class="learning.spring.entity.Employee" autowire="byType">
+		<property name="id" value="101" />
+		<property name="name" value="suhail" />
+		<property name="gender" value="Male" />
+	</bean>-->
+	
+	
+	<bean name="emp1" class="learning.spring.entity.Employee" autowire="constructor">
+		<property name="id" value="101" />
+		<property name="name" value="suhail" />
+		<property name="gender" value="Male" />
+	</bean>
 
 </beans>
