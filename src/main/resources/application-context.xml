@@ -13,7 +13,7 @@
     </bean>
 
 
-    <bean name="emp1" class="learning.spring.entity.Employee">
+    <bean name="emp1" class="learning.spring.entity.Employee" init-method="xmlInitMethod" destroy-method="xmlDestroyMethod">
    <property name="id" value="101"/>
   <property name="name" value="suhail"/>
   <property name="gender" value="Male"/>
@@ -25,7 +25,7 @@
 
 
 
-<bean name="add2" class="learning.spring.entity.Address">
+<!--<bean name="add2" class="learning.spring.entity.Address">
 <constructor-arg name="city" value="Pune"/>
 <constructor-arg name="state" value="Maharashtra"/>
 </bean>
@@ -36,5 +36,5 @@
 <constructor-arg name="name" value="Shadab"/>
 <constructor-arg name="gender" value="Male"/>
 <constructor-arg name="address" ref="add2"/>
-</bean>
+</bean>-->
 </beans>

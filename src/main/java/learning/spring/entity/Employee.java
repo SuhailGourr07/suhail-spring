@@ -1,12 +1,37 @@
 package learning.spring.entity;
 
-public class Employee {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Employee implements InitializingBean, DisposableBean{
 
 	private int id;
 	private String name;
 	private String gender;
 	
 	private Address address;
+	
+	public void xmlInitMethod() {
+		System.out.println("xmlInitMethod");
+	}
+	
+	public void xmlDestroyMethod() {
+		System.out.println("xmlDestroyMethod");
+	}
+	
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("DestroyMethod- destroy");
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("InitMethod-after Properties Set");		
+	}
+	
+	
+	
+	
 	
 	public Employee() {
 		System.out.println("Emp NoArgs Constructor");
