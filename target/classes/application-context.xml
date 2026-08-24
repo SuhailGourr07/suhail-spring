@@ -1,40 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- bean definitions here -->
-    
-    
-    <bean name="add1" class="learning.spring.entity.Address">
-    <property name="city" value="Noida"/>
-    <property name="state" value="UP"></property>
-    </bean>
+	<!-- bean definitions here -->
 
-
-    <bean name="emp1" class="learning.spring.entity.Employee">
-   <property name="id" value="101"/>
-  <property name="name" value="suhail"/>
-  <property name="gender" value="Male"/>
-  <property name="address" ref="add1"/>
-    </bean>
+	<!--    Abstract beans allow you to define common properties and configurations
+	once and reuse them across multiple beans
+-->
+	<bean name="p1" abstract="true">
+		<property name="compName" value="HCL" />
+		<property name="empId" value="101"></property>
+	</bean>
 
 
+	<bean name="child" class="learning.spring.entity.Child" parent="p1">
+		<property name="age" value="22" />
+		<property name="salary" value="78000" />
+	</bean>
 
-
-
-
-<bean name="add2" class="learning.spring.entity.Address">
-<constructor-arg name="city" value="Pune"/>
-<constructor-arg name="state" value="Maharashtra"/>
-</bean>
-
-
-<bean name="emp2" class="learning.spring.entity.Employee">
-<constructor-arg name="id" value="201"/>
-<constructor-arg name="name" value="Shadab"/>
-<constructor-arg name="gender" value="Male"/>
-<constructor-arg name="address" ref="add2"/>
-</bean>
 </beans>
