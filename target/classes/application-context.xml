@@ -17,24 +17,7 @@
    <property name="id" value="101"/>
   <property name="name" value="suhail"/>
   <property name="gender" value="Male"/>
-  <property name="address" ref="add1"/>
+  <lookup-method name="applyAddress" bean="add1"/>
     </bean>
 
-
-
-
-
-
-<bean name="add2" class="learning.spring.entity.Address">
-<constructor-arg name="city" value="Pune"/>
-<constructor-arg name="state" value="Maharashtra"/>
-</bean>
-
-
-<bean name="emp2" class="learning.spring.entity.Employee">
-<constructor-arg name="id" value="201"/>
-<constructor-arg name="name" value="Shadab"/>
-<constructor-arg name="gender" value="Male"/>
-<constructor-arg name="address" ref="add2"/>
-</bean>
 </beans>
