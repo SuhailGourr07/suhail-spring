@@ -6,17 +6,12 @@
 
     <!-- bean definitions here -->
 
-<bean name="emp1" class="learning.spring.entity.Employee">
+<bean name="dbSingleton" class="learning.spring.entity.DatabaseSingleton" factory-method="getInstance" factory-bean="db">
 
-<property name="id" value="101"/>
-<property name="name" value="suhail"/>
-<property name="gender" value="Male"/>
 </bean>
 
-<bean name="emp2" class="learning.spring.entity.Employee">
+<bean name="db" class="learning.spring.entity.DatabaseSingleton">
 
-<constructor-arg name="id" value="1001"/>
-<constructor-arg name="name" value="suhailgour"/>
-<constructor-arg name="gender" value="Male"/>
 </bean>
+
 </beans>

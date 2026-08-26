@@ -3,7 +3,7 @@ package learning.spring;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import learning.spring.entity.Employee;
+import learning.spring.entity.DatabaseSingleton;
 
 public class Main {
 
@@ -11,14 +11,15 @@ public class Main {
 
 		ApplicationContext ioc = new ClassPathXmlApplicationContext("application-context.xml");
 		
-		Employee employee1 = ioc.getBean("emp1", Employee.class);
+		DatabaseSingleton dbSingleton1 = ioc.getBean("dbSingleton", DatabaseSingleton.class);
+		DatabaseSingleton dbSingleton2 = ioc.getBean("dbSingleton", DatabaseSingleton.class);
+		DatabaseSingleton dbSingleton3 = ioc.getBean("dbSingleton", DatabaseSingleton.class);
+		DatabaseSingleton dbSingleton4 = ioc.getBean("dbSingleton", DatabaseSingleton.class);
 		
-		System.out.println(employee1);
-		
-		
-        Employee employee2 = ioc.getBean("emp2", Employee.class);
-		
-		System.out.println(employee2);
+		System.out.println(dbSingleton1);
+		System.out.println(dbSingleton2);
+		System.out.println(dbSingleton3);
+		System.out.println(dbSingleton4);
 		
 	}
 
