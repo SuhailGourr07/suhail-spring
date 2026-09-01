@@ -1,10 +1,19 @@
 package learning.spring.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Employee {
 
-	private int id;
+	private int id=11;
 	private String name;
 	private String gender;
+	
+	@Autowired
+	private Address address;
+	@Autowired
+	private Address2 address2;
 	
 	public Employee() {
 		System.out.println("NoArgs Constructor");
@@ -17,6 +26,21 @@ public class Employee {
 		System.out.println("Args Constructor");
 	}
 	
+	public Address2 getAddress2() {
+		return address2;
+	}
+
+	public void setAddress2(Address2 address2) {
+		this.address2 = address2;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 
 	public int getId() {
 		return id;
@@ -47,7 +71,8 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + "]";
+		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", address=" + address + ", address2="
+				+ address2 + "]";
 	}
 	
 }
