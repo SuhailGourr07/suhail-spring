@@ -2,8 +2,8 @@ package learning.spring.entity;
 
 import org.springframework.stereotype.Component;
 
-@Component
-public class Address {
+@Component(value = "add1")
+public class Address implements IAddress{
 
 	private String city = "Noida";
 	private String state = "UP";

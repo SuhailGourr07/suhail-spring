@@ -1,9 +1,11 @@
 package learning.spring.entity;
 
+//import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@Component
-public class Address2 {
+@Component(value = "add2")
+//@Primary
+public class Address2 implements IAddress{
 
 	private String city = "Kanpur";
 	private String state = "UP";

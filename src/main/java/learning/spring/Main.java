@@ -14,15 +14,15 @@ public class Main {
 		ApplicationContext ioc = new AnnotationConfigApplicationContext("learning.spring");
 		
 		Employee emp1 = ioc.getBean("employee", Employee.class);
-		Address add1 = ioc.getBean("address",Address.class);
-		Address2 add2 = ioc.getBean("address2",Address2.class);
+		Address add1 = ioc.getBean("add1",Address.class);
+		Address2 add2 = ioc.getBean("add2",Address2.class);
 		
 		System.out.println(emp1);	
 	
-		emp1.setName("suhail");
-		System.out.println(emp1);
+//		emp1.setName("suhail");
+//		System.out.println(emp1);
 		
-		System.out.println(add1);
+//		System.out.println(add1);
 		System.out.println(add2);
 	
 	}
